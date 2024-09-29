@@ -1,54 +1,15 @@
-# import random
-
-# def rolar_d20():
-#     return random.randint(1,20)
-
-# resultado = rolar_d20()
-# if resultado <= 1 and resultado >= 5: 
-#     print
-# else:
-#     print("falhou")
-    
-    
-# import flet as ft
-
-# def main(page: ft.Page):
-#     page.title = "Exemplo Flet"
-
-#     def on_click(e):
-#         page.add(ft.Text("Olá do Flet!"))
-
-#     button = ft.ElevatedButton(text="Batalha dos 1000 Anos", on_click=on_click)
-#     page.add(button)
-
-# ft.app(target=main)
-
-# import flet as ft
-
-# def main(page):
-    
-#     img = ft.Image(src="URL_DA_IMAGEM", width=300, height=200 ,  )
-    
-
-#     btn = ft.ElevatedButton(text="Vamos Para a Guerra!", on_click=lambda e: page.add(ft.Text("Botão clicado!")))
-
-   
-#     page.add(img, btn)
-
-# ft.app(target=main)
 
 
-import tkinter as tk
-from tkinter import PhotoImage
-from PIL import Image, ImageTk
+
+
+
 import random
 
 def iniciar_game():
 
-    print("\n=============== BATALHA DOS DOIS MUNDOS ===============")
-    print("\nNo ano 2000, com a virada do século, dois reinos gladiaram. o Reino do Sol, foi dominado pelo Reino das Sombras. Criaturas moradoras das regiões subcrustais organizaram investidas contra as obras da humanidade com objetivo de obter o poder do Planeta Terra. \n   O senhor da escuridão, junto com o seu exército de criaturas das sombras (DOFUS) querem promover o caos social, ecológico e em meio às guerras e à poluição,criar condições sub humanas de vida, dominando a Terra por completo com o objetivo de eliminar toda  a humanidade. \n   Os guardiões do planeta: humanos, mago e o elfo,têm o importante papel de reunirforças e voltar a conduzirem o destino de toda uma nação. Conhecer as artimanhas do mal e tornar-se cada vez mais forte é o único objetivo para combatê-los. Lado a lado os guardiões do Reino do Sol, representantes da justiça divina, tem como objetivo principal impedir o completo domínio do Reino das Sombras e garantir um planeta em condições mínimas para a sobrevivência dos humanos ainda existentes.")
+    print("No ano 2000, com a virada do século, dois reinos gladiaram. o Reino do Sol, foi dominado pelo Reino das Sombras. Criaturas moradoras das regiões subcrustais organizaram investidas contra as obras da humanidade com objetivo de obter o poder do Planeta Terra. \n   O senhor da escuridão, junto com o seu exército de criaturas das sombras (DOFUS) querem promover o caos social, ecológico e em meio às guerras e à poluição,criar condições sub humanas de vida, dominando a Terra por completo com o objetivo de eliminar toda  a humanidade. \n   Os guardiões do planeta: humanos, mago e o elfo,têm o importante papel de reunirforças e voltar a conduzirem o destino de toda uma nação. Conhecer as artimanhas do mal e tornar-se cada vez mais forte é o único objetivo para combatê-los. Lado a lado os guardiões do Reino do Sol, representantes da justiça divina, tem como objetivo principal impedir o completo domínio do Reino das Sombras e garantir um planeta em condições mínimas para a sobrevivência dos humanos ainda existentes.")
 
-    classes = int(input(f"\nVocê tem 3 classes para escolher, estão entre eles o \n1 - Humano \n2 - Mago \n3 - Elfo \nEscolha qual classe você deseja ser: "))
+    classes = int(input(f"Você tem 3 classes para escolher, estão entre eles o \n1 - Humano \n2 - Mago \n3 - Elfo \nEscolha qual classe você deseja ser: "))
     # attributes = []
 
     def rolar_d20():
@@ -138,38 +99,3 @@ def iniciar_game():
                 case 3:
                     print("\nVocê escolheu usar espadas duplas \nAqui está os seus atributos iniciais \n1 - Força: 3 \nAgilidade: 4 \nDefesa: 3")
                     print(human("Humano", "Espadas duplas"))
-
-def exibir_instrucoes():
-    
-    instrucoes = "Use os botões para jogar!\nClique em 'Iniciar Jogo' para começar."
-    instrucoes_label.config(text=instrucoes)
-
-janela = tk.Tk()
-janela.title("A Batalha dos dois Mundos")
-janela.geometry("800x600")  
-
-
-imagem = Image.open('batalha.jpg')
-imagem = imagem.resize((700, 500)) 
-imagem = ImageTk.PhotoImage(imagem)
-
-w = tk.Label(janela, image=imagem)
-w.imagem = imagem
-w.pack()
-
-
-
-
-
-iniciar_botao = tk.Button(janela, text="Iniciar Jogo", command=iniciar_game  )
-iniciar_botao.pack(pady=10)
-
-
-instrucoes_botao = tk.Button(janela, text="Instruções", command=exibir_instrucoes)
-instrucoes_botao.pack(pady=10)
-
-
-instrucoes_label = tk.Label(janela, text="")
-instrucoes_label.pack(pady=10)
-
-janela.mainloop()
